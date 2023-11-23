@@ -1,0 +1,116 @@
+nav {
+    background-color: #331f79;
+    position: fixed;
+    top: 0;
+    color: #fff;
+    padding: 0px;
+    width: 100%;
+    height: 45px;
+    padding-left: 5rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav li {
+    margin: 0 10px;
+}
+nav ul li {
+	list-style: none;
+	display: inline-block;
+	margin: 0 30px;
+	position: relative;
+}
+nav ul li a {
+    color: #fff;
+	text-transform: uppercase;
+}
+nav ul li::after {
+	content: '';
+	height: 3px;
+	width: 0;
+	background: rgb(50, 161, 205);
+	position: absolute;
+	left: 0;
+	bottom: -10px;
+	transition: 0.4s;
+}
+nav ul li:hover:after {
+	width: 100%;
+}
+nav a {
+    text-decoration: none;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-image:url('starr.jfif');
+	background-size: cover;
+	background-position: center;
+}
+
+header {
+    background-image:url('starr.jfif');
+	background-size: cover;
+	background-position: center;
+    background-color: #a03cad;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+.game-container {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 150px;
+    width: 1000px;
+    margin: 20px;
+}
+
+.game {
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 10px;
+    width: 300px;
+}
+
+.game img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.game h2 {
+    text-align: center;
+    margin: 10px 0;
+}
+
+.game p {
+    padding: 0 10px;
+    text-align: center;
+}
+
+.game a {
+    display: block;
+    text-align: center;
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 0 0 8px 8px;
+}
+
+.game a:hover {
+    background-color: #45a049;
+}
+
+footer {
+    background-color: #a03cad;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}

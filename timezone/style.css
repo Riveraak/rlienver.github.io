@@ -1,0 +1,72 @@
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+header {
+    background-color: #720f20;
+    color: #bda06c;
+    padding: 20px;
+    text-align: center;
+}
+
+
+nav {
+    background-color: #711f79;
+    color: #fff;
+    padding: 10px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav li {
+    margin: 0 10px;
+}
+nav ul li {
+	list-style: none;
+	display: inline-block;
+	margin: 0 20px;
+	position: relative;
+}
+nav ul li a {
+    color: #fff;
+	text-transform: uppercase;
+}
+nav ul li::after {
+	content: '';
+	height: 3px;
+	width: 0;
+	background: rgb(50, 161, 205);
+	position: absolute;
+	left: 0;
+	bottom: -10px;
+	transition: 0.4s;
+}
+nav ul li:hover:after {
+	width: 100%;
+}
+nav a {
+    text-decoration: none;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+	height: 100vh;
+	background-image:url('starr.jfif');
+	background-size: cover;
+	background-position: center;
+}
+
+section {
+    text-align: center;
+}

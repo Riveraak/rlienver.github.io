@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="exchange-ticket.css">
+  <title>CONVERT TICKET</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Exchange Your Tickets</h1>
+    <label for="ticketInput">Masukkan jumlah tiket:</label>
+    <input type="number" id="ticketInput">
+    <button onclick="redeemTicket()">Tukar Tiket</button>
+    <br>
+    <label id="resultLabel"></label>
+    <div id="barcodeDisplay"></div>
+  </div>
+  <nav>
+    <ul>
+        <li><a href="homeUser.html">Home</a></li>
+        <li><a href="user-login.html">User</a></li>
+        <li><a href="gamelist.html">Game</a></li>
+        <li><a href="souvenirlist.html">Souvenir</a></li>
+        <li><a href="powercardlist.html">Powercard</a></li>
+        <li><a href="converticket.html">Exchange</a></li>
+
+    </ul>
+</nav>
+  <script>
+    function redeemTicket() {
+      const ticketInput = document.getElementById("ticketInput");
+      const resultLabel = document.getElementById("resultLabel");
+      const barcodeDisplay = document.getElementById("barcodeDisplay");
+
+      const ticketCount = parseInt(ticketInput.value);
+
+      if (isNaN(ticketCount)) {
+        resultLabel.textContent = "Masukkan jumlah tiket yang valid.";
+        barcodeDisplay.textContent = "";
+      } else if (ticketCount < 500) {
+        resultLabel.textContent = "Maaf, jumlah tiket harus lebih dari 500.";
+        barcodeDisplay.textContent = "";
+      } else {
+        const randomBarcode = generateRandomBarcode();
+        resultLabel.textContent = `Anda telah menukar ${ticketCount} tiket, redeem code ini di Outlet Timezone sembari membawa ticket yang telah Anda tukar.`;
+        barcodeDisplay.textContent = randomBarcode;
+      }
+    }
+
+    function generateRandomBarcode() {
+      const characters = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+      const barcodeLength = 12;
+      let barcode = "";
+
+      for (let i = 0; i < barcodeLength; i++) {
+        const randomIndex = Math.floor(Math.random() * characters.length);
+        barcode += characters.charAt(randomIndex);
+      }
+
+      return barcode;
+    }
+  </script>
+</body>
+</html>
